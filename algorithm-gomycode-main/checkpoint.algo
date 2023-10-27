@@ -1,0 +1,80 @@
+// assignment 1
+ALGORITHM using_array
+
+//declaring array and defining it lenght
+    VAR
+        set1: ARRAY_OF_INTEGER[4];
+        set2: ARRAY_OF_INTEGER[4]; 
+        i, j: INTEGER 
+        sum: INTEGER :=0
+//declare the index for each element of the array
+    BEGIN
+        set1:={3,1,7,9};
+        set2:={2,4,1,9,3};
+
+    FOR i FROM 0 TO set1.length
+        FOR j FROM 0 TO set2.length 
+        
+        IF (set1[i] =set2[j] ) THEN
+            BREAK;
+        END_IF
+        IF (set1[i]<>set2[j]) THEN
+        sum = sum + set1[i];
+        END_IF
+    END_FOR
+
+    FOR j FROM 0 TO set2.length
+        FOR i FROM 0 TO set1.length 
+        
+        IF (set2[j] =set1[i] ) THEN
+        BREAK;
+        END_IF
+    IF (set2[j]<>set1[i]) THEN
+            sum = sum + set2[j];
+    END_IF
+        
+
+    END_FOR
+
+END
+
+
+//assignment 2
+ALGORITHM dot_product
+
+VAR
+V1 : ARRAY_OF_INTEGER[5];
+V1 : ARRAY_FOR_INTEGER[5];
+
+// check_output: STRING[];
+
+ps_value: INTEGER
+    BEGIN
+
+    Read(v1)
+    Read(v2)
+    ps_value = product_of_vector(v1, v2)
+
+END
+
+// create a function called do_product that take in two variables
+
+FUNCTION product_of_vectors(v1, v2) : INTEGER
+
+VAR
+// create a variable to store the product of the vector
+ i,ps: INTEGER =0
+
+BEGIN
+        // check the length of both vectors to make sure they are same
+    IF (v1.lenght <> v2.length) THEN
+        Write("Please provide vectors of equal length")
+    END_IF
+// find the total sum of all the vectors
+
+    FOR i FROM 0 TO V1.length -1 STEP 1  DO
+        ps = ps +([i] =v1[i] *v2[i]);
+    END_FOR
+
+    RETURN ps;
+END

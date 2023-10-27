@@ -1,0 +1,95 @@
+//personal reaserse
+ALGORITHM traverse_array
+
+//declaring array and defining it lenght
+    VAR
+    tab: ARRAY_OF_INTEGER[5];
+        i: INTEGER; //declare the index for each element of the array
+    BEGIN
+        tab:={1,2,3,4,5}; // inserting direct element into the array
+        write(Print Array:)
+    FOR i FROM 0 TO 4 STEP 1  DO
+        Write(tab[i])
+    END_FOR
+
+//write another version
+
+    FOR i FROM 0 TO tab.length -1 STEP 1  DO
+        write(tab[i])
+    END_FOR
+END
+// how to insect element in array
+ALGORITHM insection_array
+ VAR
+ tab: ARRAY_FOR_INTEGER[5];
+ i, j, pos,elt: INTEGER;
+ BEGIN
+ FOR i FROM 0 TO 4 STEP 1  DO
+    Read(tab[i]);
+ END_FOR
+
+ Write("give the element to insert");
+ Read(elt);
+ write("give the position to insert in array");
+ Read(pos);
+ j:=tab.length;
+ WHILE (j >=pos) DO
+    tab[j+1]:=tab[j];
+ END_WHILE
+
+ tab[pos]:=elt;
+ END
+
+ //how to perform search in array
+ ALGORITHM search_array
+
+ VAR
+ tab: ARRAY_OF_INTEGER[5];
+ i,j,pos,elt: INTEGER;
+BEGIN
+FOR i FROM 0 TO 4 STEP 1  DO
+    Read(tab[i]);//insert from user
+END_FOR
+
+Write("give the element to search of");
+Read(elt);
+
+j:=0;
+
+WHILE (j<tab.length) DO
+    IF (tab[i]=elt) THEN
+        BREAK
+    END_IF
+END_WHILE
+IF (j=tab.lenght) THEN
+    pos:=-1;
+ELSE
+    pos:=j
+END_IF
+
+Write("The position of the element is", pos);
+
+ END
+
+ // how to delete an element from an array
+
+ ALGORITHM deletion_Array
+ VAR
+tab : ARRAY_OF INTEGER[5];
+i,j,pos,elt: INTEGER;
+BEGIN
+FOR i FROM 0 TO 4 DO
+    Read(tab[1]);
+END_FOR
+
+Write("give the position to delete");
+Read(pos);
+
+j:=pos;
+WHILE (j<tab.lenght) DO
+    tab[i]:=tab[j+];
+    j:=j+1;
+END_WHILE
+
+
+ END
